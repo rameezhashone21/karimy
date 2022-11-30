@@ -73,6 +73,7 @@ class ForgotPasswordController
       }
       else{
           return response()->json([
+            'result' => $request->email,
             'message' => 'Email has been sent to email the users email address',
             'status'  => 1
           ], 200);
@@ -118,6 +119,7 @@ class ForgotPasswordController
           DB::table('password_resets')->where(['email'=> $request->email])->delete();
   
           return response()->json([
+            'result' => $user,
             'message' => 'Password Reset Successfully Done',
             'status'  => 1
           ], 200);

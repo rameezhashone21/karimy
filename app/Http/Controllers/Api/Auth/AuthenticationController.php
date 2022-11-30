@@ -84,9 +84,9 @@ class AuthenticationController
         });
 
         if (Mail::failures()) {
-            return response(['statusCode' => '404', 'message' => 'User did not register'], 404);
+            return response(['status' => '0', 'message' => 'User did not register'], 404);
         } else {
-            return response(["Data" => $user, 'statusCode' => '200', 'message' => 'User Registration Successfully Completed'], 201);
+            return response(["result" => $user, 'status' => '1', 'message' => 'User Registration Successfully Completed'], 201);
 
         }
         
@@ -111,9 +111,12 @@ class AuthenticationController
           // create token
           $token =  $user->createToken('MyApp')->accessToken;
 
+          $result = new stdClass;
+          $result->user = $user;
+          $result->token = $token;
+
           return response()->json([
-            'token'   => $token,
-            'verfication'   => $user->verification,
+            'result' => $result,
             'message' => 'Logged In Successfully',
             'status'  => 1
           ], 200);
@@ -144,6 +147,8 @@ class AuthenticationController
           }
     
           return response()->json([
+            'result' => $verifyUser->user,
+            'status' => 1,
             'message' => $message,
           ], 200);
 

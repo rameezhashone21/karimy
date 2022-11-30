@@ -14088,3 +14088,123 @@ error:1408F10B:SSL routines:ssl3_get_record:wrong version number
 #43 C:\\xampp\\htdocs\\laravel_project\\server.php(20): require_once('C:\\\\xampp\\\\htdocs...')
 #44 {main}
 "} 
+[2022-11-30 10:38:58] debug.ERROR: Failed to authenticate on SMTP server with username "johnconnor2996@gmail.com" using 3 possible authenticators. Authenticator LOGIN returned Expected response code 235 but got code "534", with message "534-5.7.9 Please log in with your web browser and then try again. Learn more at
+534 5.7.9  https://support.google.com/mail/?p=WebLoginRequired m14-20020a5d624e000000b00241dd5de644sm1097805wrv.97 - gsmtp
+". Authenticator PLAIN returned Expected response code 235 but got code "534", with message "534-5.7.9 Please log in with your web browser and then try again. Learn more at
+534 5.7.9  https://support.google.com/mail/?p=WebLoginRequired m14-20020a5d624e000000b00241dd5de644sm1097805wrv.97 - gsmtp
+". Authenticator XOAUTH2 returned Expected response code 250 but got code "535", with message "535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials m14-20020a5d624e000000b00241dd5de644sm1097805wrv.97 - gsmtp
+". {"exception":"[object] (Swift_TransportException(code: 0): Failed to authenticate on SMTP server with username \"johnconnor2996@gmail.com\" using 3 possible authenticators. Authenticator LOGIN returned Expected response code 235 but got code \"534\", with message \"534-5.7.9 Please log in with your web browser and then try again. Learn more at
+
+534 5.7.9  https://support.google.com/mail/?p=WebLoginRequired m14-20020a5d624e000000b00241dd5de644sm1097805wrv.97 - gsmtp
+
+\". Authenticator PLAIN returned Expected response code 235 but got code \"534\", with message \"534-5.7.9 Please log in with your web browser and then try again. Learn more at
+
+534 5.7.9  https://support.google.com/mail/?p=WebLoginRequired m14-20020a5d624e000000b00241dd5de644sm1097805wrv.97 - gsmtp
+
+\". Authenticator XOAUTH2 returned Expected response code 250 but got code \"535\", with message \"535-5.7.8 Username and Password not accepted. Learn more at
+
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials m14-20020a5d624e000000b00241dd5de644sm1097805wrv.97 - gsmtp
+
+\". at C:\\xampp\\htdocs\\laravel_project\\vendor\\swiftmailer\\swiftmailer\\lib\\classes\\Swift\\Transport\\Esmtp\\AuthHandler.php:191)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\laravel_project\\vendor\\swiftmailer\\swiftmailer\\lib\\classes\\Swift\\Transport\\EsmtpTransport.php(371): Swift_Transport_Esmtp_AuthHandler->afterEhlo(Object(Swift_SmtpTransport))
+#1 C:\\xampp\\htdocs\\laravel_project\\vendor\\swiftmailer\\swiftmailer\\lib\\classes\\Swift\\Transport\\AbstractSmtpTransport.php(148): Swift_Transport_EsmtpTransport->doHeloCommand()
+#2 C:\\xampp\\htdocs\\laravel_project\\vendor\\swiftmailer\\swiftmailer\\lib\\classes\\Swift\\Mailer.php(65): Swift_Transport_AbstractSmtpTransport->start()
+#3 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(488): Swift_Mailer->send(Object(Swift_Message), Array)
+#4 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(261): Illuminate\\Mail\\Mailer->sendSwiftMessage(Object(Swift_Message))
+#5 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(261): Illuminate\\Mail\\Mailer->send('email.userregis...', Array, Object(Closure))
+#6 C:\\xampp\\htdocs\\laravel_project\\app\\Http\\Controllers\\Api\\Auth\\AuthenticationController.php(84): Illuminate\\Support\\Facades\\Facade::__callStatic('send', Array)
+#7 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(48): App\\Http\\Controllers\\Api\\Auth\\AuthenticationController->register(Object(Illuminate\\Http\\Request))
+#8 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Api\\Auth\\AuthenticationController), 'register')
+#9 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#10 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#11 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#12 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#14 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#16 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#18 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#19 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#20 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#21 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\xampp\\htdocs\\laravel_project\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#35 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\laravel_project\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp\\htdocs\\laravel_project\\server.php(20): require_once('C:\\\\xampp\\\\htdocs...')
+#38 {main}
+"} 
+[2022-11-30 10:40:00] debug.ERROR: Failed to authenticate on SMTP server with username "johnconnor2996@gmail.com" using 3 possible authenticators. Authenticator LOGIN returned Expected response code 235 but got code "534", with message "534-5.7.9 Please log in with your web browser and then try again. Learn more at
+534 5.7.9  https://support.google.com/mail/?p=WebLoginRequired p17-20020a05600c359100b003c6b9749505sm5384404wmq.30 - gsmtp
+". Authenticator PLAIN returned Expected response code 235 but got code "534", with message "534-5.7.9 Please log in with your web browser and then try again. Learn more at
+534 5.7.9  https://support.google.com/mail/?p=WebLoginRequired p17-20020a05600c359100b003c6b9749505sm5384404wmq.30 - gsmtp
+". Authenticator XOAUTH2 returned Expected response code 250 but got code "535", with message "535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials p17-20020a05600c359100b003c6b9749505sm5384404wmq.30 - gsmtp
+". {"exception":"[object] (Swift_TransportException(code: 0): Failed to authenticate on SMTP server with username \"johnconnor2996@gmail.com\" using 3 possible authenticators. Authenticator LOGIN returned Expected response code 235 but got code \"534\", with message \"534-5.7.9 Please log in with your web browser and then try again. Learn more at
+
+534 5.7.9  https://support.google.com/mail/?p=WebLoginRequired p17-20020a05600c359100b003c6b9749505sm5384404wmq.30 - gsmtp
+
+\". Authenticator PLAIN returned Expected response code 235 but got code \"534\", with message \"534-5.7.9 Please log in with your web browser and then try again. Learn more at
+
+534 5.7.9  https://support.google.com/mail/?p=WebLoginRequired p17-20020a05600c359100b003c6b9749505sm5384404wmq.30 - gsmtp
+
+\". Authenticator XOAUTH2 returned Expected response code 250 but got code \"535\", with message \"535-5.7.8 Username and Password not accepted. Learn more at
+
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials p17-20020a05600c359100b003c6b9749505sm5384404wmq.30 - gsmtp
+
+\". at C:\\xampp\\htdocs\\laravel_project\\vendor\\swiftmailer\\swiftmailer\\lib\\classes\\Swift\\Transport\\Esmtp\\AuthHandler.php:191)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\laravel_project\\vendor\\swiftmailer\\swiftmailer\\lib\\classes\\Swift\\Transport\\EsmtpTransport.php(371): Swift_Transport_Esmtp_AuthHandler->afterEhlo(Object(Swift_SmtpTransport))
+#1 C:\\xampp\\htdocs\\laravel_project\\vendor\\swiftmailer\\swiftmailer\\lib\\classes\\Swift\\Transport\\AbstractSmtpTransport.php(148): Swift_Transport_EsmtpTransport->doHeloCommand()
+#2 C:\\xampp\\htdocs\\laravel_project\\vendor\\swiftmailer\\swiftmailer\\lib\\classes\\Swift\\Mailer.php(65): Swift_Transport_AbstractSmtpTransport->start()
+#3 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(488): Swift_Mailer->send(Object(Swift_Message), Array)
+#4 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(261): Illuminate\\Mail\\Mailer->sendSwiftMessage(Object(Swift_Message))
+#5 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(261): Illuminate\\Mail\\Mailer->send('email.userregis...', Array, Object(Closure))
+#6 C:\\xampp\\htdocs\\laravel_project\\app\\Http\\Controllers\\Api\\Auth\\AuthenticationController.php(84): Illuminate\\Support\\Facades\\Facade::__callStatic('send', Array)
+#7 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(48): App\\Http\\Controllers\\Api\\Auth\\AuthenticationController->register(Object(Illuminate\\Http\\Request))
+#8 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Api\\Auth\\AuthenticationController), 'register')
+#9 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#10 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#11 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#12 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#14 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#16 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#18 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#19 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#20 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#21 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\xampp\\htdocs\\laravel_project\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#35 C:\\xampp\\htdocs\\laravel_project\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\laravel_project\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp\\htdocs\\laravel_project\\server.php(20): require_once('C:\\\\xampp\\\\htdocs...')
+#38 {main}
+"} 
